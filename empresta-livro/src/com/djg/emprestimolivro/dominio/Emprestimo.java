@@ -1,12 +1,14 @@
 package com.djg.emprestimolivro.dominio;
 
-public class CadastroDeEmprestimo {
+import java.time.LocalDate;
+
+public class Emprestimo {
 	
 	private String codigo;
 	private Usuario usuarioSolicitante;
 	private Livros livroEmprestado;
-	private String dataSolicitacao ;
-	private String dataDevolucao ;
+	private LocalDate dataSolicitacao ;
+	private LocalDate dataDevolucao ;
 	
 	public String getCodigo() {
 		return codigo;
@@ -26,22 +28,22 @@ public class CadastroDeEmprestimo {
 	public void setLivroEmprestado(Livros livroEmprestado) {
 		this.livroEmprestado = livroEmprestado;
 	}
-	public String getDataSolicitacao() {
+	public LocalDate getDataSolicitacao() {
 		return dataSolicitacao;
 	}
-	public void setDataSolicitacao(String dataSolicitacao) {
+	public void setDataSolicitacao(LocalDate dataSolicitacao) {
 		this.dataSolicitacao = dataSolicitacao;
 	}
-	public String getDataDevolucao() {
+	public LocalDate getDataDevolucao() {
 		return dataDevolucao;
 	}
-	public void setDataDevolucao(String dataDevolucao) {
+	public void setDataDevolucao(LocalDate dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
 	
 	
-	public CadastroDeEmprestimo(String codigo, Usuario usuarioSolicitante, Livros livroEmprestado,
-			String dataSolicitacao, String dataDevolucao) {
+	public Emprestimo(String codigo, Usuario usuarioSolicitante, Livros livroEmprestado,
+			LocalDate dataSolicitacao, LocalDate dataDevolucao) {
 		super();
 		this.codigo = codigo;
 		this.usuarioSolicitante = usuarioSolicitante;
@@ -50,13 +52,13 @@ public class CadastroDeEmprestimo {
 		this.dataDevolucao = dataDevolucao;
 	}
 	
-	public void cadastroEmprestimo() {
+	public void emprestimo() {
 		
-	System.out.println(getUsuarioSolicitante().getNomeCompleto());
-	System.out.println(getLivroEmprestado().getNome());
-	System.out.println(dataSolicitacao);
-	System.out.println(dataDevolucao);
-	
+	System.out.println("Nome do cliente: "+getUsuarioSolicitante().getNomeCompleto());	
+	System.out.println("Nome do livro: "+getLivroEmprestado().getNome());
+	System.out.println("Nome do Autor: "+getLivroEmprestado().getAutor());
+	System.out.println("Data do emprestimo: "+dataSolicitacao);
+	System.out.println("Data da devolução: "+dataDevolucao);
 		
 		
 	}
